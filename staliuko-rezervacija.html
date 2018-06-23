@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="//meniu.lt/assets/vendor/klavakrapstis/meniu-html/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="//meniu.lt/assets/vendor/klavakrapstis/meniu-html/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="//meniu.lt/assets/vendor/klavakrapstis/meniu-html/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="//meniu.lt/assets/vendor/klavakrapstis/meniu-html/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="//meniu.lt/assets/vendor/klavakrapstis/meniu-html/favicon-128.png" sizes="128x128" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600,800" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="js/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker3.standalone.css">
+    <script src="js/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        $(document).ready(function() {
+            $('#reserve-table').modal('show');
+            $('.select2').select2({
+                minimumResultsForSearch: -1,
+                width: '100%'
+            });
+            $('.datepicker').datepicker({
+                format: "yyyy-mm-dd",
+                autoclose: true
+            });
+        });
+    </script>
+    <title>Aktyvumo taškai | meniu.lt</title>
+</head>
+<body>
+<header class="header">
+    <div class="wrapper">
+        <div class="content"></div>
+    </div>
+</header>
+<main>
+    <div class="wrapper">
+        <div class="left">
+            <div class="menu">
+                <img src="img/left-menu.jpg" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <div class="reserve-table">
+                    <div class="user-title">Staliuko rezervacija</div>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reserve-table">Rezervuoti staliuką</button>
+
+                    <div class="modal fade" id="reserve-table" tabindex="-1">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close x" data-dismiss="modal" aria-label="Close"></button>
+                                    <h4 class="modal-title" id="myModalLabel">STALIUKO REZERVACIJA</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-header">Jūsų užsakymas</div>
+                                            <div class="form-group">
+                                                <label class="w-100">Nuo kada rezervuoti staliuka?</label>
+                                                <div class="w-48 gap">
+                                                    <div class="input-group datepicker date">
+                                                        <input type="text" class="form-control" value="2018-06-24">
+                                                        <div class="input-group-addon">
+                                                            <span class="fa fa-caret-down"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="w-48">
+                                                    <select class="select2" required="required" data-placeholder="Laikas" data-allow-clear="true">
+                                                        <option value=""></option>
+                                                        <option value="1">11:00</option>
+                                                        <option value="12">12:00</option>
+                                                        <option value="13">13:00</option>
+                                                        <option value="14" disabled="disabled">14:00</option>
+                                                        <option value="15">15:00</option>
+                                                        <option value="16">16:00</option>
+                                                        <option value="17">17:00</option>
+                                                    </select>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Salė</label>
+                                                <select class="select2" required="required" data-placeholder="Salė">
+                                                    <option value=""></option>
+                                                    <option value="1">Banketinė</option>
+                                                    <option value="2" disabled="disabled">Didžioji</option>
+                                                    <option value="3">Pagrindinė</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Svečių skaičius</label>
+                                                <select class="select2" required="required" data-placeholder="Svečių skaičius">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-header">Jūsų kontaktai</div>
+                                            <div class="form-group">
+                                                <label>&nbsp;</label>
+                                                <input type="text" class="form-control" placeholder="Vardas">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Pavardė">
+                                            </div>
+                                            <div class="form-group input-group phone">
+                                                <div class="input-group-addon">
+                                                    <select class="select2" required="required" data-width="80px" data-placeholder="+370">
+                                                        <option value="1">+370</option>
+                                                        <option value="2">+371</option>
+                                                        <option value="3">+372</option>
+                                                    </select>
+                                                </div>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="El. paštas">
+                                            </div>
+                                            <div class="sep"></div>
+                                            <div class="form-header">Papildomi reikalavimai</div>
+                                            <div class="form-group">
+                                                <label>Pastabos</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Papildomi reikalavimai</label>
+                                                <textarea type="text" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span>Sutinku su registracijos taisyklėmis</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Rezervuoti</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="wrapper">
+        <div class="content"></div>
+    </div>
+</footer>
+</body>
+</html>

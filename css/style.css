@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background: #EBE8E2;
   font-family: 'Muli', sans-serif; }
@@ -5,7 +6,7 @@ body {
 .clearfix {
   clear: both; }
 
-.container {
+.wrapper {
   width: 960px;
   margin: 0 auto;
   background: #fbfaf8; }
@@ -117,8 +118,144 @@ footer {
   .loyalty-points .tabs-content .points {
     font-weight: 800; }
 
+.modal label {
+  font-weight: 400;
+  font-size: 12px; }
+.modal .w-100 {
+  width: 100%; }
+.modal .w-50 {
+  float: left;
+  width: 50%; }
+.modal .w-48 {
+  float: left;
+  width: 48%; }
+  .modal .w-48.gap {
+    margin-right: 4%; }
+.modal .x {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transition: transform .25s ease-in-out;
+  opacity: 1; }
+.modal .x:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  height: 0;
+  border-top: 1px solid #787878;
+  transform: rotate(45deg);
+  transform-origin: center; }
+.modal .x:after {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  height: 0;
+  border-top: 1px solid #787878;
+  transform: rotate(-45deg);
+  transform-origin: center; }
+.modal .form-header {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 800; }
+.modal .modal-header .close {
+  position: absolute;
+  right: 15px;
+  top: 15px; }
+.modal .modal-content {
+  padding: 5px 40px 15px 40px; }
+.modal .modal-title {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #ca1c2d; }
+.modal .modal-footer {
+  text-align: center; }
+  .modal .modal-footer .checkbox label {
+    font-size: 14px; }
+.modal .btn-danger {
+  background: #c82132;
+  padding-left: 50px;
+  padding-right: 50px; }
+  .modal .btn-danger:hover {
+    background: #b21d2d; }
+.modal .fa-times-thin:before {
+  content: '\00d7'; }
+.modal .sep {
+  border-bottom: 1px solid #d8d8d8;
+  margin: 20px 0; }
+.modal .input-group.phone input {
+  border-left: 0; }
+.modal .input-group.phone .input-group-addon {
+  padding: 0;
+  border: none; }
+.modal .input-group.phone .select2-container .select2-selection--single {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 34px; }
+
+.select2-container .select2-selection--single {
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 34px; }
+
+.select2-container--default .select2-selection--single {
+  border-color: #ccc;
+  outline: none; }
+
+.select2-container {
+  outline: none; }
+  .select2-container .select2-results__option {
+    margin: 3px 5px;
+    border-radius: 2px; }
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+  color: #fff;
+  background: #c82132;
+  position: relative; }
+  .select2-container--default .select2-results__option[aria-disabled=true]:after {
+    content: "(0 vietų)";
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 10px; }
+
+.datepicker .form-control {
+  box-shadow: none;
+  border-right: 0; }
+.datepicker .input-group-addon {
+  background: transparent;
+  color: #888; }
+.datepicker table tr td,
+.datepicker table tr th {
+  border-radius: 99px; }
+.datepicker table tr td.active:active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active {
+  background-color: #c82132 !important;
+  border-color: #c82132 !important; }
+
 @media (max-width: 767px) {
-  .container,
+  .wrapper,
   main .right {
     width: 100%; }
 
@@ -140,6 +277,9 @@ footer {
         .loyalty-points .tabs ul li a i {
           font-size: 14px; }
   .loyalty-points .tabs-content ul {
-    column-count: 1; } }
+    column-count: 1; }
+
+  .modal .modal-content {
+    padding: 5px 10px 15px 10px; } }
 
 /*# sourceMappingURL=style.css.map */

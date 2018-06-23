@@ -7,7 +7,7 @@ body {
 .clearfix {
   clear: both;
 }
-.container {
+.wrapper {
   width: 960px;
   margin: 0 auto;
   background: #fbfaf8;
@@ -73,6 +73,12 @@ footer {
   padding: 20px 0;
   margin: 15px 0 0;
 }
+
+
+//*****************************************************************
+//  LOYALTY POINTS
+//*****************************************************************
+
 
 .loyalty-points {
   .tabs {
@@ -154,8 +160,197 @@ footer {
   }
 }
 
+//*****************************************************************
+//  MODALS
+//*****************************************************************
+
+.modal {
+  label {
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .w-100 {
+    width: 100%;
+  }
+  .w-50 {
+    float: left;
+    width: 50%;
+  }
+  .w-48 {
+    float: left;
+    width: 48%;
+    &.gap {
+      margin-right: 4%;
+    }
+  }
+  .x {
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: transform .25s ease-in-out;
+    opacity: 1;
+  }
+  .x:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 0;
+    border-top: 1px solid #787878;
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+  .x:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 0;
+    border-top: 1px solid #787878;
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+  .form-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+  .modal-header {
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+  }
+  .modal-content {
+    padding: 5px 40px 15px 40px;
+  }
+  .modal-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #ca1c2d;
+  }
+  .modal-footer {
+    text-align: center;
+    .checkbox label {
+      font-size: 14px;
+    }
+  }
+  .btn-danger {
+    background: #c82132;
+    padding-left: 50px;
+    padding-right: 50px;
+    &:hover {
+      background: darken(#c82132,5);
+    }
+  }
+  .fa-times-thin:before {
+    content: '\00d7';
+  }
+  .sep {
+    border-bottom: 1px solid #d8d8d8;
+    margin: 20px 0;
+  }
+  .input-group {
+    &.phone {
+      input {
+        border-left: 0;
+      }
+      .input-group-addon {
+        padding: 0;
+        border: none;
+      }
+      .select2-container .select2-selection--single {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+}
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 34px;
+}
+.select2-container .select2-selection--single {
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 34px;
+}
+.select2-container--default .select2-selection--single {
+  border-color: #ccc;
+  outline: none;
+}
+.select2-container {
+  outline: none;
+  .select2-results__option {
+    margin: 3px 5px;
+    border-radius: 2px;
+  }
+}
+.select2-container--default .select2-results__option[aria-disabled=true] {
+  color: #fff;
+  background: #c82132;
+  position: relative;
+  &:after {
+    content: "(0 vietų)";
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 10px;
+  }
+}
+
+.datepicker {
+  .form-control {
+    box-shadow: none;
+    border-right: 0;
+  }
+  .input-group-addon {
+    background: transparent;
+    color: #888;
+  }
+  table tr td,
+  table tr th {
+    border-radius: 99px;
+  }
+  table tr td {
+    &.active:active,
+    &.active.highlighted:active,
+    &.active.active,
+    &.active.highlighted.active {
+      background-color: #c82132!important;
+      border-color: #c82132!important;
+    }
+  }
+}
+
+
+//*****************************************************************
+//  MEDIA QUERIES
+//*****************************************************************
+
 @media(max-width:767px){
-  .container,
+  .wrapper,
   main .right
   {
     width: 100%;
@@ -196,4 +391,9 @@ footer {
       }
     }
   }
+
+  .modal .modal-content {
+    padding: 5px 10px 15px 10px;
+  }
+
 }
