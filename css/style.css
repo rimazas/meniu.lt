@@ -48,12 +48,16 @@ footer {
     height: 221px;
     background-repeat: no-repeat; }
 
-.loyalty-points h2 {
-  font-size: 18px;
-  padding: 0 0 15px;
-  margin: 0 0 20px;
-  border-bottom: 1px solid #E9E9E9;
-  font-weight: 400; }
+.user-title {
+  font-size: 20px;
+  line-height: 22px;
+  margin-bottom: 12px; }
+
+.user-points-info {
+  border-top: 1px solid #ebebeb;
+  padding: 20px 0;
+  margin: 15px 0 0; }
+
 .loyalty-points .tabs ul {
   list-style-type: none;
   padding: 0;
@@ -112,5 +116,30 @@ footer {
     color: #7f7f7d; }
   .loyalty-points .tabs-content .points {
     font-weight: 800; }
+
+@media (max-width: 767px) {
+  .container,
+  main .right {
+    width: 100%; }
+
+  main .left {
+    display: none; }
+  main .right .content {
+    margin: 0; }
+
+  .loyalty-points .tabs,
+  .loyalty-points .tabs-content {
+    margin-left: -20px;
+    margin-right: -20px; }
+  .loyalty-points .tabs ul {
+    border-radius: 0; }
+    .loyalty-points .tabs ul li {
+      border-radius: 0 !important; }
+      .loyalty-points .tabs ul li a {
+        font-size: 12px; }
+        .loyalty-points .tabs ul li a i {
+          font-size: 14px; }
+  .loyalty-points .tabs-content ul {
+    column-count: 1; } }
 
 /*# sourceMappingURL=style.css.map */
