@@ -92,13 +92,15 @@ footer {
       .loyalty-points .tabs ul li a i {
         font-style: normal;
         font-size: 16px;
-        font-weight: 800; }
+        font-weight: 800;
+        color: #7f7f7d; }
 .loyalty-points .tabs-content {
   background: #fff4e8;
   padding: 20px;
   margin-bottom: 20px;
   border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px; }
+  border-bottom-left-radius: 6px;
+  min-height: 130px; }
   .loyalty-points .tabs-content ul {
     list-style-type: none;
     padding: 0;
@@ -203,6 +205,103 @@ footer {
 .modal .input-group.phone .select2-container .select2-selection--single {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
+.modal .error {
+  padding: 5px;
+  font-size: 12px;
+  color: #c82132; }
+.modal .guests-number {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f8f6;
+  z-index: 1;
+  position: relative; }
+  .modal .guests-number .select2-container {
+    margin: -1px; }
+  .modal .guests-number .select2-container--default.select2-container--disabled .select2-selection--single {
+    background: #fff; }
+.modal .guests-list {
+  position: relative;
+  padding: 40px 20px 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+  border: solid 1px #d8d8d8;
+  margin-top: -33px; }
+  .modal .guests-list .prev {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    color: #787878; }
+  .modal .guests-list .next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: #787878; }
+  .modal .guests-list .count {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #d8d8d8;
+    text-align: center;
+    line-height: 36px;
+    margin: 4px; }
+    .modal .guests-list .count.disabled {
+      color: #fff;
+      background-color: #c82132;
+      border: solid 1px #d8d8d8; }
+    .modal .guests-list .count.selected {
+      color: #fff;
+      background-color: #5bb32a;
+      border: solid 1px #787878; }
+.modal .prepayment {
+  position: absolute;
+  top: 6px;
+  left: 55%; }
+  .modal .prepayment .icon {
+    display: inline-block;
+    background: url("../img/icons/svg/avansas.svg");
+    width: 18px;
+    height: 18px; }
+  .modal .prepayment .text {
+    vertical-align: top;
+    font-weight: 600;
+    color: #787878;
+    font-size: 14px; }
+.modal .reservation-note {
+  padding-top: 10px;
+  font-size: 12px;
+  color: #2c2c2c;
+  line-height: 14px; }
+  .modal .reservation-note .title {
+    font-weight: 600;
+    margin-bottom: 5px; }
+
+.input-group-addon {
+  position: relative; }
+
+.icon-down {
+  background: url("../img/icons/svg/down.svg");
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 10px;
+  margin: 0;
+  border: none;
+  left: 0; }
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  width: 24px; }
+  .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    background: url("../img/icons/svg/down.svg");
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 10px;
+    margin: 0;
+    border: none;
+    left: 0; }
 
 .select2-container .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -241,16 +340,27 @@ footer {
     right: 5px;
     font-size: 10px; }
 
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #fff;
+  color: #000; }
+
 .datepicker .form-control {
   box-shadow: none;
   border-right: 0; }
 .datepicker .input-group-addon {
   background: transparent;
   color: #888; }
+.datepicker.dropdown-menu td.day:not(.disabled) {
+  font-weight: 800; }
 .datepicker table tr td,
 .datepicker table tr th {
   border-radius: 99px; }
-.datepicker table tr td.active:active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active {
+.datepicker table tr td.active:active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active,
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active.highlighted:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active.highlighted.active {
   background-color: #c82132 !important;
   border-color: #c82132 !important; }
 
@@ -276,8 +386,10 @@ footer {
         font-size: 12px; }
         .loyalty-points .tabs ul li a i {
           font-size: 14px; }
-  .loyalty-points .tabs-content ul {
-    column-count: 1; }
+  .loyalty-points .tabs-content {
+    min-height: 195px; }
+    .loyalty-points .tabs-content ul {
+      column-count: 1; }
 
   .modal .modal-content {
     padding: 5px 10px 15px 10px; } }

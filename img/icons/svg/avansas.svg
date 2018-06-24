@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>avansas</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="avansas" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5.52195135,17.3033309 L6.12121212,15.6281859 L11.8989899,15.6281859 L12.483224,17.3011586 C11.4118216,17.7512644 10.2349584,18 9,18 C7.76702969,18 6.5919678,17.7520646 5.52195135,17.3033309 Z M2.89032984,15.6085326 C1.1128578,13.9644393 0,11.6121806 0,9 C0,4.02943725 4.02943725,0 9,0 C13.9705627,0 18,4.02943725 18,9 C18,11.6109218 16.8882145,13.9621721 15.1122394,15.6061553 L10.8080808,4 L7.21212121,4 L2.89032984,15.6085326 Z" id="Combined-Shape" fill="#787878"></path>
+        <polygon id="Triangle" fill="#787878" points="9 7 11 13 7 13"></polygon>
+    </g>
+</svg>

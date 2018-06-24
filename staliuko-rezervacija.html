@@ -25,17 +25,57 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="js/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker3.standalone.css">
     <script src="js/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-datepicker-1.6.4-dist/locales/bootstrap-datepicker.lt.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script>
         $(document).ready(function() {
-            $('.select2').select2({
+            var $select2 = $('.select2').select2({
                 minimumResultsForSearch: -1,
-                width: '100%'
+                width: '100%',
+                templateResult: function (data) {
+                    // We only really care if there is an element to pull classes from
+                    if (!data.element) {
+                        return data.text;
+                    }
+
+                    var $element = $(data.element);
+
+                    var $wrapper = $('<span></span>');
+                    $wrapper.addClass($element[0].className);
+
+                    $wrapper.text(data.text);
+
+                    return $wrapper;
+                }
             });
+
+            var $guests = $('.guest-list').select2({
+
+            });
+
+            $('.guests-number .select2-container').on('click', function(){
+                console.log('guest list');
+            });
+
+            $guests.val(2).trigger('change');
+
             $('.datepicker').datepicker({
+                language: 'lt',
                 format: "yyyy-mm-dd",
-                autoclose: true
+                autoclose: true,
+                clearBtn: true,
+                startDate: '1d',
+                templates: {
+                    leftArrow: '<i class="fa fa-angle-left"></i>',
+                    rightArrow: '<i class="fa fa-angle-right"></i>'
+                }
             });
+
+            $(document).on('click', '.select2-container--default .select2-results__option[aria-disabled=true]', function(){
+                $select2.select2('close');
+            });
+
+            $('#reserve-table').modal('show');
         });
     </script>
     <title>Staliuko rezervacija | meniu.lt</title>
@@ -76,16 +116,16 @@
                                                     <div class="input-group datepicker date">
                                                         <input type="text" class="form-control" value="2018-06-24">
                                                         <div class="input-group-addon">
-                                                            <span class="fa fa-caret-down"></span>
+                                                            <span class="icon-down"></span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="w-48">
-                                                    <select class="select2" required="required" data-placeholder="Laikas" data-allow-clear="true">
+                                                    <select class="select2" required="required" data-placeholder="Laikas">
                                                         <option value=""></option>
                                                         <option value="1">11:00</option>
                                                         <option value="12">12:00</option>
-                                                        <option value="13">13:00</option>
+                                                        <option value="13" class="disabled">13:00</option>
                                                         <option value="14" disabled="disabled">14:00</option>
                                                         <option value="15">15:00</option>
                                                         <option value="16">16:00</option>
@@ -102,16 +142,50 @@
                                                     <option value="2" disabled="disabled">Didžioji</option>
                                                     <option value="3">Pagrindinė</option>
                                                 </select>
+                                                <div class="error">
+                                                    Sioje saleje Jusu pasirinktu metu rezrvuoti visi staliukai. Del papildomu staliuku kreipkites telefonu +370 620 33 323
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Svečių skaičius</label>
-                                                <select class="select2" required="required" data-placeholder="Svečių skaičius">
-                                                    <option value=""></option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                </select>
+                                                <div class="guests-number">
+                                                    <select class="select2 guest-list" required="required"
+                                                            disabled="disabled"
+                                                            data-placeholder="Svečių skaičius"
+                                                            data-width="48%">
+                                                        <option value=""></option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                    <div class="prepayment">
+                                                        <span class="icon"></span>
+                                                        <span class="text">-100 EUR</span>
+                                                    </div>
+                                                </div>
+                                                <div class="guests-list">
+                                                    <div class="prev">
+                                                        <i class="fa fa-angle-left"></i>
+                                                    </div>
+                                                    <span class="count disabled">1</span>
+                                                    <span class="count disabled">2</span>
+                                                    <span class="count">3</span>
+                                                    <span class="count selected">4</span>
+                                                    <span class="count">5</span>
+                                                    <span class="count">6</span>
+                                                    <span class="count">7</span>
+                                                    <span class="count">8</span>
+                                                    <div class="next">
+                                                        <i class="fa fa-angle-right"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="reservation-note">
+                                                    <p class="title">Taikomas rezervacijos avansinis mokestis</p>
+                                                    <div class="text">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">

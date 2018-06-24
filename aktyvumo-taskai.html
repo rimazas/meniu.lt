@@ -13,6 +13,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <script>
+        $(document).ready(function(){
+            $('.tab').on('click', function(){
+                var target = $(this).data('target');
+                $('.tab').parent().removeClass('active');
+                $('.tab-block').removeClass('active');
+
+                $(this).parent().addClass('active');
+                $(target).addClass('active');
+            })
+        })
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <title>Aktyvumo taškai | meniu.lt</title>
 </head>
@@ -37,13 +49,13 @@
                             <div class="tabs">
                                 <ul>
                                     <li class="active">
-                                        <a href="#">
+                                        <a href="#" class="tab" data-target="#tab-1">
                                             <span>Sukaupti taškai</span>
                                             <i>(600)</i>
                                         </a>
                                     </li>
                                     <li class="">
-                                        <a href="#">
+                                        <a href="#" class="tab" data-target="#tab-2">
                                             <span>Panaudoti taškai </span>
                                             <i>(300)</i>
                                         </a>

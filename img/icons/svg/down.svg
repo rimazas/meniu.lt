@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M7.7223527,10.495433 C7.71229955,10.5059345 7.70201859,10.5162154 7.69151716,10.5262686 C7.29257071,10.908185 6.65955625,10.8943795 6.2776398,10.495433 L0.151152851,4.09576045 C0.0620612994,4.00269623 0.0123310755,3.87883421 0.0123310755,3.75 C0.0123310755,3.47385763 0.236188701,3.25 0.512331076,3.25 L13.4876614,3.25 C13.6164956,3.25 13.7403577,3.29973022 13.8334219,3.38882178 C14.0328951,3.57978 14.0397979,3.89628723 13.8488397,4.09576045 L7.7223527,10.495433 Z M7,9 L11.21875,4.75 L2.78125,4.75 L7,9 Z" id="Combined-Shape" fill="#787878"></path>
+    </g>
+</svg>
