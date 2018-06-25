@@ -21,7 +21,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="js/bootstrap-datepicker-1.6.4-dist/css/bootstrap-datepicker3.standalone.css">
     <script src="js/bootstrap-datepicker-1.6.4-dist/js/bootstrap-datepicker.min.js"></script>
@@ -31,30 +31,22 @@
         $(document).ready(function() {
             var $select2 = $('.select2').select2({
                 minimumResultsForSearch: -1,
-                width: '100%',
-                templateResult: function (data) {
-                    // We only really care if there is an element to pull classes from
-                    if (!data.element) {
-                        return data.text;
-                    }
-
-                    var $element = $(data.element);
-
-                    var $wrapper = $('<span></span>');
-                    $wrapper.addClass($element[0].className);
-
-                    $wrapper.text(data.text);
-
-                    return $wrapper;
-                }
+                width: '100%'
             });
 
-            var $guests = $('.guest-list').select2({
-
-            });
+            var $guests = $('.guest-list').select2();
 
             $('.guests-number .select2-container').on('click', function(){
-                console.log('guest list');
+                $('.prepayment').show();
+                $('.guests-count').show();
+            });
+
+            $('.count:not(.disabled)').on('click', function(){
+                $guests.val($(this).text()).trigger('change');
+                $('.guests-count').children().removeClass('selected');
+                $(this).addClass('selected');
+                $('.guests-count').hide();
+                $('.reservation-note').show();
             });
 
             $guests.val(2).trigger('change');
@@ -73,6 +65,9 @@
 
             $(document).on('click', '.select2-container--default .select2-results__option[aria-disabled=true]', function(){
                 $select2.select2('close');
+                $('.select-error').show();
+                $(document).find('.hall-select').addClass('selection-error');
+                $('.hall-selection').val(2).trigger('change');
             });
 
             $('#reserve-table').modal('show');
@@ -136,20 +131,22 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Salė</label>
-                                                <select class="select2" required="required" data-placeholder="Salė">
+                                                <select class="select2 hall-selection" required="required"
+                                                        data-placeholder="Salė"
+                                                        data-container-css-class="hall-select">
                                                     <option value=""></option>
                                                     <option value="1">Banketinė</option>
                                                     <option value="2" disabled="disabled">Didžioji</option>
                                                     <option value="3">Pagrindinė</option>
                                                 </select>
-                                                <div class="error">
+                                                <div class="select-error" style="display:none;">
                                                     Sioje saleje Jusu pasirinktu metu rezrvuoti visi staliukai. Del papildomu staliuku kreipkites telefonu +370 620 33 323
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Svečių skaičius</label>
                                                 <div class="guests-number">
-                                                    <select class="select2 guest-list" required="required"
+                                                    <select class="guest-list" required="required"
                                                             disabled="disabled"
                                                             data-placeholder="Svečių skaičius"
                                                             data-width="48%">
@@ -158,15 +155,19 @@
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
                                                         <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
                                                     </select>
-                                                    <div class="prepayment">
+                                                    <div class="prepayment" style="display:none">
                                                         <span class="icon"></span>
                                                         <span class="text">-100 EUR</span>
                                                     </div>
                                                 </div>
-                                                <div class="guests-list">
+                                                <div class="guests-count" style="display:none;">
                                                     <div class="prev">
-                                                        <i class="fa fa-angle-left"></i>
+                                                        <i class="icon-prev"></i>
                                                     </div>
                                                     <span class="count disabled">1</span>
                                                     <span class="count disabled">2</span>
@@ -177,10 +178,10 @@
                                                     <span class="count">7</span>
                                                     <span class="count">8</span>
                                                     <div class="next">
-                                                        <i class="fa fa-angle-right"></i>
+                                                        <i class="icon-next"></i>
                                                     </div>
                                                 </div>
-                                                <div class="reservation-note">
+                                                <div class="reservation-note" style="display:none;">
                                                     <p class="title">Taikomas rezervacijos avansinis mokestis</p>
                                                     <div class="text">
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.

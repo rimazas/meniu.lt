@@ -205,10 +205,15 @@ footer {
 .modal .input-group.phone .select2-container .select2-selection--single {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
-.modal .error {
+.modal .select-error {
   padding: 5px;
   font-size: 12px;
   color: #c82132; }
+.modal .select2-container--default .select2-selection--single.selection-error {
+  border-color: #c82132;
+  background-color: #fae9eb; }
+  .modal .select2-container--default .select2-selection--single.selection-error .select2-selection__rendered {
+    color: #c82132; }
 .modal .guests-number {
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -219,7 +224,7 @@ footer {
     margin: -1px; }
   .modal .guests-number .select2-container--default.select2-container--disabled .select2-selection--single {
     background: #fff; }
-.modal .guests-list {
+.modal .guests-count {
   position: relative;
   padding: 40px 20px 10px 20px;
   border-radius: 4px;
@@ -227,17 +232,20 @@ footer {
   background-color: #ffffff;
   border: solid 1px #d8d8d8;
   margin-top: -33px; }
-  .modal .guests-list .prev {
+  .modal .guests-count .prev {
     position: absolute;
-    left: 10px;
+    left: 5px;
     top: 50%;
-    color: #787878; }
-  .modal .guests-list .next {
+    color: #787878;
+    cursor: pointer; }
+  .modal .guests-count .next {
     position: absolute;
-    right: 10px;
+    right: 9px;
     top: 50%;
-    color: #787878; }
-  .modal .guests-list .count {
+    color: #787878;
+    cursor: pointer; }
+  .modal .guests-count .count {
+    cursor: pointer;
     display: inline-block;
     width: 36px;
     height: 36px;
@@ -247,11 +255,11 @@ footer {
     text-align: center;
     line-height: 36px;
     margin: 4px; }
-    .modal .guests-list .count.disabled {
+    .modal .guests-count .count.disabled {
       color: #fff;
       background-color: #c82132;
       border: solid 1px #d8d8d8; }
-    .modal .guests-list .count.selected {
+    .modal .guests-count .count.selected {
       color: #fff;
       background-color: #5bb32a;
       border: solid 1px #787878; }
@@ -277,6 +285,16 @@ footer {
   .modal .reservation-note .title {
     font-weight: 600;
     margin-bottom: 5px; }
+.modal .icon-prev {
+  display: inline-block;
+  background: url("../img/icons/svg/left.svg");
+  width: 10px;
+  height: 14px; }
+.modal .icon-next {
+  display: inline-block;
+  background: url("../img/icons/svg/right.svg");
+  width: 12px;
+  height: 14px; }
 
 .input-group-addon {
   position: relative; }
